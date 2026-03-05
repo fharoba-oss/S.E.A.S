@@ -1,0 +1,458 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #f7f7f7;
+    color: #111;
+    line-height: 1.6;
+}
+
+/* Header Top: Logo left, actions right */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    /* left and right extremes */
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffffff;
+}
+
+/* Right side container for button + login icon */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* space between Start Simulation and login icon */
+}
+
+/* Start Simulation button styling */
+.start-btn {
+    background-color: #59ACBD;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.start-btn:hover {
+    background-color: #4a95a3;
+}
+
+/* Login icon styling */
+.login-link .material-icons {
+    font-size: 28px;
+    color: #000;
+    cursor: pointer;
+}
+
+.login-link:hover .material-icons {
+    color: #59ACBD;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+.header h1 {
+    color: #59ACBD;
+    font-size: 1.8em;
+}
+
+.start-btn {
+    background-color: #59ACBD;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.start-btn:hover {
+    background-color: #4a95a3;
+}
+
+/* Navigation Band */
+.nav-band {
+    display: flex;
+    justify-content: space-around;
+    background-color: #59ACBD;
+    padding: 12px 0;
+    gap: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-band a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.nav-band a:hover {
+    background-color: #4a95a3;
+}
+
+/* Main Content */
+.main-content {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.intro h2 {
+    color: #59ACBD;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+}
+
+/* How It Works Section */
+.how-it-works {
+    background-color: #ffffff;
+    border-left: 8px solid #FFEB99;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.how-it-works h3 {
+    color: #59ACBD;
+    margin-bottom: 15px;
+}
+
+.how-it-works ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.how-it-works li {
+    margin-bottom: 10px;
+}
+
+/* Mission & Vision Section */
+.mission-vision {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.mission,
+.vision {
+    background-color: #ffffff;
+    border-left: 8px solid #FFEB99;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mission h3,
+.vision h3 {
+    color: #59ACBD;
+    margin-bottom: 10px;
+}
+
+/* Login Page Styles */
+.login-section {
+    max-width: 420px;
+    max-height: 500px;
+    margin: 60px auto;
+    background-color: #ffffff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+}
+
+.login-section h2 {
+    color: #59ACBD;
+    margin-bottom: 20px;
+}
+
+.login-container {
+
+    display: flex;
+    align-items: center;
+    border: 2px solid #59ACBD;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 15px;
+    background-color: #fff;
+}
+
+.login-container input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding-left: 8px;
+    font-size: 14px;
+}
+
+.login-container .material-icons {
+    color: #59ACBD;
+    margin-right: 8px;
+}
+
+.login-btn {
+    background-color: #59ACBD;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.login-btn:hover {
+    background-color: #4a95a3;
+}
+
+.login-section a {
+    color: #59ACBD;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-section a:hover {
+    text-decoration: underline;
+}
+
+/* Signup Page */
+.signup-page {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.signup-page h2 {
+    color: #FFD700;
+    /* bright yellow title */
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.signup-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 2px solid #FFD700;
+    /* bright yellow border */
+    border-radius: 12px;
+    padding: 10px 12px;
+    margin-bottom: 18px;
+    background-color: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.signup-container:hover {
+    border-color: #FFC107;
+    /* slightly darker yellow on hover */
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+.signup-container input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 14px;
+    padding: 6px 0;
+}
+
+.signup-container .material-icons {
+    color: #FFD700;
+    /* bright yellow icons */
+    font-size: 28px;
+}
+
+.signup-btn {
+    background-color: #59ACBD;
+    /* turquoise button */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.signup-btn:hover {
+    background-color: #4a95a3;
+    transform: translateY(-2px);
+}
+
+.signup-page p {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.signup-page p a {
+    color: #FFD700;
+    /* yellow link */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-page p a:hover {
+    text-decoration: underline;
+}
+
+/* Body & General */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f7f7;
+    color: #111;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.header {
+    background-color: #ffffff;
+    border-bottom: 3px solid #59ACBD;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 40px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+.header h1 {
+    color: #59ACBD;
+    font-size: 1.8em;
+}
+
+/* Navigation Band */
+.nav-band {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-band a {
+    color: white;
+    background-color: #59ACBD;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.nav-band a:hover {
+    background-color: #4a95a3;
+}
+
+/* Simulation Container */
+.simulation-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Quiz Questions */
+.quiz-question {
+    background-color: #fff8d6;
+    border-left: 6px solid #FFEB99;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.quiz-question label {
+    display: block;
+    margin: 6px 0;
+    cursor: pointer;
+}
+
+.quiz-option {
+    display: block;
+    margin: 6px 0;
+    /* each option on new line with proper spacing */
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Submit Button */
+#submit-quiz-btn {
+    background-color: #FFEB99;
+    color: #111;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 20px;
+}
+
+#submit-quiz-btn:hover {
+    background-color: #f5d63d;
+}
+
+.next-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f7c948;
+    border: none;
+    padding: 12px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.next-btn:hover {
+    background-color: #e0b437;
+}
+
+.quiz-results {
+    margin-top: 20px;
+    font-weight: bold;
+}

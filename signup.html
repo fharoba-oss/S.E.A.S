@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - S.E.A.S</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <main class="signup-page">
+        <h2>Create Your Account</h2>
+
+        <!-- Full Name -->
+        <div class="signup-container">
+            <span class="material-icons">person</span>
+            <input type="text" placeholder="Full Name">
+        </div>
+
+        <!-- Username -->
+        <div class="signup-container">
+            <span class="material-icons">account_circle</span>
+            <input type="text" placeholder="Username">
+        </div>
+
+        <!-- Email -->
+        <div class="signup-container">
+            <span class="material-icons">email</span>
+            <input type="email" placeholder="Email">
+        </div>
+
+        <!-- Set Password -->
+        <div class="signup-container">
+            <span class="material-icons">lock</span>
+            <input type="password" placeholder="Set Password (8+ characters)" id="setPassword">
+        </div>
+        <p id="caps-warning-set" style="color:red; font-size:0.9em; display:none;"> ⚠️Caps Lock is ON</p>
+
+        <!-- Confirm Password -->
+        <div class="signup-container">
+            <span class="material-icons">lock</span>
+            <input type="password" placeholder="Confirm Password" id="confirmPassword">
+        </div>
+        <p id="caps-warning-confirm" style="color:red; font-size:0.9em; display:none;"> ⚠️Caps Lock is ON</p>
+
+        <button class="signup-btn">Sign Up</button>
+
+        <p>Already have an account? <a href="login.html">Login</a></p>
+    </main>
+
+    <!-- Your page content here -->
+
+    <script>
+        // JS code goes here
+        function detectCaps(inputId, warningId) {
+            const input = document.getElementById(inputId);
+            const warning = document.getElementById(warningId);
+
+            input.addEventListener('keyup', (event) => {
+                if (event.getModifierState('CapsLock')) {
+                    warning.style.display = 'block';
+                } else {
+                    warning.style.display = 'none';
+                }
+            });
+        }
+
+        // Signup page
+        detectCaps('setPassword', 'caps-warning-set');
+        detectCaps('confirmPassword', 'caps-warning-confirm');
+
+        // Login page
+        detectCaps('loginPassword', 'caps-warning-login');
+    </script>
+
+</body>
+
+</html>
+</body>
+
+</html>
