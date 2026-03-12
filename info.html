@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.E.A.S - Info / Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Header similar to homepage */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 30px;
+            background-color: #fff;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-container img.logo {
+            height: 50px;
+        }
+
+        .logo-container h1 {
+            color: #59ACBD;
+            font-size: 28px;
+            margin: 0;
+        }
+
+        .nav-band {
+            background-color: #59ACBD;
+            color: #fff;
+            font-weight: 600;
+            padding: 8px 30px;
+            border-radius: 4px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        /* Main container */
+        .simulation-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 25px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: #59ACBD;
+            font-size: 26px;
+            margin-top: 20px;
+        }
+
+        h3 {
+            color: #59ACBD;
+            margin-top: 20px;
+        }
+
+        p {
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        ul {
+            margin: 10px 0 20px 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .tip-box {
+            background-color: #FFEB99;
+            color: #333;
+            padding: 15px;
+            border-left: 5px solid #4B0082;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .info-box {
+            background-color: #59ACBD;
+            color: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+
+        .example {
+            background-color: #e6f7f9;
+            border-left: 4px solid #59ACBD;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 8px;
+        }
+
+        a.back-home {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 10px 20px;
+            background-color: #59ACBD;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        a.back-home:hover {
+            background-color: #40a0a8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="S.E.A.S Logo" class="logo">
+            <h1>S.E.A.S</h1>
+        </div>
+        <nav class="nav-band">Info / Notes</nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="simulation-container">
+
+        <h2>Welcome to Social Engineering Awareness</h2>
+        <p>This guide is designed to teach you everything you need to know about social engineering attacks. By reading
+            carefully, you will understand how attackers operate, recognize warning signs, and learn the practical steps
+            to protect yourself. Even beginners will come away feeling confident and prepared.</p>
+
+        <!-- PHISHING -->
+        <h3>Phishing</h3>
+        <p>Phishing attacks involve a person or group pretending to be a trustworthy source in order to steal sensitive
+            information. They may send emails, messages, or create fake websites that appear authentic. Phishing can
+            happen to anyone and is one of the most common attacks because it targets human trust rather than technical
+            weaknesses.</p>
+
+        <div class="example">
+            <strong>Example:</strong> You receive an email from "Your IT Team" stating your account password will expire
+            today. The email contains a link asking you to reset it immediately.
+        </div>
+
+        <div class="tip-box">
+            <strong>Tip:</strong> Phishing emails create urgency. Pause, analyze the sender, and verify the request
+            through official channels before taking any action.
+        </div>
+
+        <h4>Why It Works:</h4>
+        <ul>
+            <li>Exploits emotions: fear, urgency, or curiosity</li>
+            <li>Often looks legitimate with company logos or personal details</li>
+            <li>Most people act quickly without verifying details</li>
+        </ul>
+
+        <h4>Common Warning Signs:</h4>
+        <ul>
+            <li>Emails from unknown or suspicious senders</li>
+            <li>Links that don't match official websites</li>
+            <li>Requests for passwords, financial data, or personal information</li>
+            <li>Spelling/grammar errors in otherwise professional messages</li>
+            <li>Urgency cues: "Act now" or "Immediate action required"</li>
+        </ul>
+
+        <h4>Steps to Stay Safe:</h4>
+        <ul>
+            <li>Never click links or attachments from unknown sources</li>
+            <li>Verify requests with official contacts (call or email your IT Team directly)</li>
+            <li>Report suspicious emails immediately</li>
+        </ul>
+
+        <!-- BAITING -->
+        <h3>Baiting</h3>
+        <p>Baiting lures people into a trap by offering something appealing, such as free downloads, gifts, or devices.
+            The goal is to trick users into installing malware or compromising security. Curiosity and the desire for
+            rewards are what baiting exploits.</p>
+
+        <div class="example">
+            <strong>Example:</strong> A USB stick labeled "Confidential Reports" is left on your desk. Plugging it into
+            your computer could install malware silently.
+        </div>
+
+        <div class="tip-box">
+            <strong>Tip:</strong> Never plug in unknown devices. Report found devices to your IT Team.
+        </div>
+
+        <h4>Steps to Stay Safe:</h4>
+        <ul>
+            <li>Ignore suspicious links, downloads, or gifts</li>
+            <li>Never connect unknown USBs or devices</li>
+            <li>Report suspicious items immediately</li>
+        </ul>
+
+        <!-- PRETEXTING -->
+        <h3>Pretexting</h3>
+        <p>Pretexting occurs when an attacker invents a story or identity to gain your trust and obtain sensitive
+            information. They may impersonate a colleague, a service provider, or an authority figure. The goal is to
+            manipulate you into giving information you normally wouldn’t share.</p>
+
+        <div class="example">
+            <strong>Example:</strong> A caller claims to be from "Your Bank" and asks you to verify account details for
+            "security purposes."
+        </div>
+
+        <div class="tip-box">
+            <strong>Tip:</strong> Verify every request through official channels. Do not be pressured by urgency or
+            authority.
+        </div>
+
+        <h4>Steps to Stay Safe:</h4>
+        <ul>
+            <li>Never give out passwords or financial information without verification</li>
+            <li>Contact official sources to confirm requests</li>
+            <li>Report suspicious interactions to IT/security</li>
+        </ul>
+
+        <!-- ADDITIONAL MEASURES -->
+        <h3>Additional Steps to Protect Yourself</h3>
+        <p>Adopting these daily habits significantly reduces your risk of falling victim to social engineering attacks.
+            Each tip includes an explanation and example so you can apply it in real-life scenarios.</p>
+
+        <div class="info-box" style="padding:0; background-color:transparent; color:#333;">
+            <ul style="padding-left: 0; list-style: none;">
+                <li style="margin-bottom: 25px; display:flex; align-items:flex-start;">
+                    <span
+                        style="display:inline-block; width:8px; height:8px; background-color:#59ACBD; border-radius:50%; margin-right:12px; margin-top:8px;"></span>
+                    <div>
+                        <strong>Create strong passwords:</strong> Use at least 12 characters combining uppercase,
+                        lowercase, numbers, and symbols.
+                        <em>Example:</em> Instead of "password123," use "T3al!B1rd92#". Strong passwords reduce the risk
+                        of brute force attacks.
+                    </div>
+                </li>
+
+                <li style="margin-bottom: 25px; display:flex; align-items:flex-start;">
+                    <span
+                        style="display:inline-block; width:8px; height:8px; background-color:#59ACBD; border-radius:50%; margin-right:12px; margin-top:8px;"></span>
+                    <div>
+                        <strong>Enable two-factor authentication (2FA):</strong> Adds an extra verification step such as
+                        a code sent to your phone.
+                        <em>Example:</em> Even if someone guesses your password, they cannot access your account without
+                        the code.
+                    </div>
+                </li>
+
+                <li style="margin-bottom: 25px; display:flex; align-items:flex-start;">
+                    <span
+                        style="display:inline-block; width:8px; height:8px; background-color:#59ACBD; border-radius:50%; margin-right:12px; margin-top:8px;"></span>
+                    <div>
+                        <strong>Keep software updated:</strong> Install updates on devices, browsers, and apps to patch
+                        security vulnerabilities.
+                        <em>Example:</em> Security patches often fix vulnerabilities attackers could exploit.
+                    </div>
+                </li>
+
+                <li style="margin-bottom: 25px; display:flex; align-items:flex-start;">
+                    <span
+                        style="display:inline-block; width:8px; height:8px; background-color:#59ACBD; border-radius:50%; margin-right:12px; margin-top:8px;"></span>
+                    <div>
+                        <strong>Verify links and attachments:</strong> Only open content from trusted sources.
+                        <em>Example:</em> Hover over links to check the URL, or confirm with your IT team before opening
+                        attachments.
+                    </div>
+                </li>
+
+                <li style="margin-bottom: 25px; display:flex; align-items:flex-start;">
+                    <span
+                        style="display:inline-block; width:8px; height:8px; background-color:#59ACBD; border-radius:50%; margin-right:12px; margin-top:8px;"></span>
+                    <div>
+                        <strong>Lock devices:</strong> Use PINs, passwords, or fingerprints.
+                        <em>Example:</em> A locked laptop prevents unauthorized access if left unattended.
+                    </div>
+                </li>
+
+                <li style="margin-bottom: 25px; display:flex; align-items:flex-start;">
+                    <span
+                        style="display:inline-block; width:8px; height:8px; background-color:#59ACBD; border-radius:50%; margin-right:12px; margin-top:8px;"></span>
+                    <div>
+                        <strong>Backup important files:</strong> Keep offline or cloud backups.
+                        <em>Example:</em> If malware encrypts your files, you can restore them safely.
+                    </div>
+                </li>
+
+                <li style="margin-bottom: 25px; display:flex; align-items:flex-start;">
+                    <span
+                        style="display:inline-block; width:8px; height:8px; background-color:#59ACBD; border-radius:50%; margin-right:12px; margin-top:8px;"></span>
+                    <div>
+                        <strong>Use secure networks:</strong> Avoid public Wi-Fi for sensitive accounts.
+                        <em>Example:</em> Logging into accounts over open Wi-Fi increases the risk of interception.
+                    </div>
+                </li>
+
+                <li style="margin-bottom: 25px; display:flex; align-items:flex-start;">
+                    <span
+                        style="display:inline-block; width:8px; height:8px; background-color:#59ACBD; border-radius:50%; margin-right:12px; margin-top:8px;"></span>
+                    <div>
+                        <strong>Limit sharing personal information:</strong> Only share with trusted sources.
+                        <em>Example:</em> Avoid posting full date of birth or ID numbers online.
+                    </div>
+                </li>
+
+                <li style="margin-bottom: 25px; display:flex; align-items:flex-start;">
+                    <span
+                        style="display:inline-block; width:8px; height:8px; background-color:#59ACBD; border-radius:50%; margin-right:12px; margin-top:8px;"></span>
+                    <div>
+                        <strong>Stay informed:</strong> Learn about emerging tactics.
+                        <em>Example:</em> Follow security blogs or updates from your IT team to recognize new phishing
+                        trends.
+                    </div>
+                </li>
+
+                <li style="margin-bottom: 0; display:flex; align-items:flex-start;">
+                    <span
+                        style="display:inline-block; width:8px; height:8px; background-color:#59ACBD; border-radius:50%; margin-right:12px; margin-top:8px;"></span>
+                    <div>
+                        <strong>Report suspicious activity:</strong> Notify IT/security immediately.
+                        <em>Example:</em> If you receive a suspicious email claiming to be from your IT team, report it
+                        rather than ignoring it.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <a href="index.html" class="back-home">← Go Back to Home</a>
+
+    </div>
+</body>
+
+</html>
