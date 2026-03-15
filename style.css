@@ -553,3 +553,126 @@ body {
 .sim-btn:hover {
     background-color: #4c98a8;
 }
+
+/* Scenario progress text */
+.scenario-progress {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Yellow scenario card */
+.scenario-card {
+    background: #e9dfb9;
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+}
+
+.scenario-box {
+    background-color: #ffeb99;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Title */
+.scenario-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+/* Attack type */
+.attack-type {
+    color: #555;
+    margin-bottom: 18px;
+}
+
+/* Grey email box */
+.email-box {
+    background: #e6e6e6;
+    border: 1px solid #cfcfcf;
+    border-radius: 10px;
+    padding: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Options */
+.option-card {
+    display: block;
+    background-color: #fff8dc;
+    /* pastel yellow */
+    border: 2px solid #40e0d0;
+    /* turquoise */
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.option-card:hover {
+    background: #dddddd;
+}
+
+.option-card input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Submit button */
+.submit-btn {
+    background: #f3d882;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.feedback-card {
+    background-color: #fff8dc;
+    border-left: 6px solid #40e0d0;
+    padding: 18px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+/* Unified button style for simulator */
+.sim-btn {
+    background-color: #FFF59D;
+    /* pastel yellow */
+    color: #111;
+    /* text color */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 20px;
+    /* uniform size */
+    border: none;
+    border-radius: 12px;
+    /* rounded corners */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+    margin: 5px;
+    /* spacing between buttons */
+}
+
+/* Hover effect */
+.sim-btn:hover {
+    background-color: #FFEB99;
+    /* lighter yellow on hover */
+    transform: scale(1.05);
+}
+
+/* Disabled state (for submit button) */
+.sim-btn:disabled {
+    background-color: #f7f7f7;
+    color: #aaa;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}

@@ -1,70 +1,139 @@
 // =======================
 // PHISHING SCENARIOS DATA
 // =======================
+// =======================
+// PHISHING SCENARIOS
+// =======================
 const phishingScenarios = [
     {
-        title: "Urgent System Verification",
-        preview: "Your account requires immediate verification to avoid suspension.",
-        content: "You receive an email stating that your system account must be verified immediately or it will be suspended. The email contains a link asking you to log in and confirm your details.",
+        title: "Email Phishing – Account Suspension Warning",
+        preview: "Your company email account may be suspended due to unusual activity.",
+        content: `
+<p><strong>From:</strong> IT Support &lt;support@company.com&gt;<br>
+<strong>To:</strong> You<br>
+<strong>Subject:</strong> Account Suspension Notice</p>
+
+<p>Dear Employee,</p>
+
+<p>We have detected <strong>unusual activity</strong> on your company email account. As a precaution, your account may be <strong>temporarily suspended</strong> if no action is taken. To ensure continued access, please <strong>verify your identity immediately</strong> by clicking the link below.</p>
+
+<p><a href="#"><strong>[Verify Your Account]</strong></a></p>
+
+<p>Please note that failing to verify your account may result in <strong>restricted access</strong> to your email and other company services.</p>
+
+<p>Thank you for your prompt attention.</p>
+
+<p>Sincerely,<br>
+<strong>IT Support Team</strong></p>
+        `,
         options: [
-            "Click the link and enter your login details",
-            "Ignore the email completely",
-            "Do not click the link and report the email as suspicious"
-        ],
-        correct: 2,
-        feedback: [
-            "❌ This is dangerous. The link may lead to a fake login page designed to steal your credentials.",
-            "⚠️ Ignoring it avoids the risk, but reporting it helps prevent others from being targeted.",
-            "✅ Correct. Reporting suspicious emails helps security teams investigate and warn others."
-        ]
-    },
-    {
-        title: "Password Reset Notification",
-        preview: "A password reset request was received for your account.",
-        content: "You receive an email claiming that a password reset was requested for your account. It asks you to click a link to confirm the request.",
-        options: [
-            "Click the link immediately to secure the account",
-            "Check the sender address and verify if the email looks legitimate",
-            "Forward the email to coworkers asking if they received it"
-        ],
-        correct: 1,
-        feedback: [
-            "❌ This could lead to a malicious website that steals your credentials.",
-            "✅ Correct. Always verify the sender and inspect suspicious emails carefully before interacting.",
-            "⚠️ Forwarding it may spread a malicious email further."
-        ]
-    },
-    {
-        title: "Unexpected Attachment",
-        preview: "A message contains an attachment labelled 'Important Documents'.",
-        content: "You receive an email with an attachment labelled 'Important Documents'. You were not expecting any documents from this sender.",
-        options: [
-            "Download and open the attachment to see what it contains",
             "Delete the email immediately",
-            "Verify the sender and confirm whether the attachment is legitimate before opening it"
+            "Click the link and verify your account",
+            "Report the email to IT/security"
         ],
-        correct: 2,
-        feedback: [
-            "❌ Opening unknown attachments may install malware on your system.",
-            "⚠️ Deleting it removes the threat but verifying first helps determine if it is legitimate.",
-            "✅ Correct. Always verify unexpected attachments before opening them."
-        ]
+        feedbackContent: `
+Social engineering attacks manipulate human behaviour rather than technical systems. Attackers often rely on urgency, curiosity, fear, or authority to pressure employees into making quick decisions without verifying the request.
+
+In workplace environments, these attacks commonly appear through suspicious emails, unexpected phone calls, fake system warnings, or physical devices such as unknown USB drives. Employees should always pause and verify requests before taking action.
+
+Best practice is to confirm requests through official communication channels, avoid interacting with unknown devices or links, and report suspicious activity to the appropriate internal authority or IT personnel.
+        `
     },
     {
-        title: "Prize Notification Email",
-        preview: "You have been selected to receive a special reward.",
-        content: "You receive an email saying you have been selected to receive a reward. The message asks you to click a link and provide personal details to claim it.",
+        title: "Email Phishing – Payroll Update",
+        preview: "An email claims there is an error in the payroll system.",
+        content: `
+<p><strong>From:</strong> IT Support &lt;support@company.com&gt;<br>
+<strong>To:</strong> You<br>
+<strong>Subject:</strong> Payroll Update Required</p>
+
+<p>Dear Employee,</p>
+
+<p>An email appears in your inbox claiming to be from the payroll department. The message says there has been an <strong>error in the payroll system</strong> and employees must <strong>confirm their bank details</strong> through an attached form.</p>
+
+<p>The email looks professional and contains the company logo.</p>
+
+<p>You were not expecting any payroll changes.</p>
+
+<p>Thank you,<br>
+<strong>Payroll Department</strong></p>
+        `,
         options: [
-            "Click the link and fill in the information",
-            "Ignore the email and do nothing",
-            "Recognize it as suspicious and report it"
+            "Download and complete the attachment",
+            "Contact HR through official channels to verify the request",
+            "Forward the email to colleagues"
         ],
-        correct: 2,
-        feedback: [
-            "❌ This is a common phishing tactic used to collect personal information.",
-            "⚠️ Ignoring it avoids the trap but reporting it helps security teams monitor threats.",
-            "✅ Correct. Messages offering unexpected rewards are a common phishing technique."
-        ]
+        feedbackContent: `
+Social engineering attacks manipulate human behaviour rather than technical systems. Attackers often rely on urgency, curiosity, fear, or authority to pressure employees into making quick decisions without verifying the request.
+
+In workplace environments, these attacks commonly appear through suspicious emails, unexpected phone calls, fake system warnings, or physical devices such as unknown USB drives. Employees should always pause and verify requests before taking action.
+
+Best practice is to confirm requests through official communication channels, avoid interacting with unknown devices or links, and report suspicious activity to the appropriate internal authority or IT personnel.
+        `
+    },
+    {
+        title: "Email Phishing – System Maintenance",
+        preview: "Urgent action required to verify system credentials.",
+        content: `
+<p><strong>From:</strong> IT Support &lt;support@company-secureteam.com&gt;<br>
+<strong>To:</strong> You<br>
+<strong>Subject:</strong> System Maintenance – Immediate Action Required</p>
+
+<p>Dear Employee,</p>
+
+<p>You open your email inbox and notice a message marked as urgent. The email claims the company is performing an <strong>emergency security upgrade</strong> and all employees must <strong>verify their credentials</strong>.</p>
+
+<p>The message warns that if you do not act within 24 hours, your <strong>account access may be restricted</strong>.</p>
+
+<p>The email includes a login link labelled <strong>Secure Login Portal</strong>.</p>
+
+<p>However, something feels slightly unusual about the email address and tone of urgency.</p>
+
+<p>Thank you,<br>
+<strong>IT Support Team</strong></p>
+        `,
+        options: [
+            "Click the login link and enter your credentials",
+            "Ignore the email completely",
+            "Report the email to IT/security"
+        ],
+        feedbackContent: `
+Social engineering attacks manipulate human behaviour rather than technical systems. Attackers often rely on urgency, curiosity, fear, or authority to pressure employees into making quick decisions without verifying the request.
+
+In workplace environments, these attacks commonly appear through suspicious emails, unexpected phone calls, fake system warnings, or physical devices such as unknown USB drives. Employees should always pause and verify requests before taking action.
+
+Best practice is to confirm requests through official communication channels, avoid interacting with unknown devices or links, and report suspicious activity to the appropriate internal authority or IT personnel.
+        `
+    },
+    {
+        title: "Email Phishing – Security Alert",
+        preview: "Unusual login activity detected on your company account.",
+        content: `
+<p><strong>From:</strong> IT Security &lt;security@company.com&gt;<br>
+<strong>To:</strong> You<br>
+<strong>Subject:</strong> Unusual Login Activity Detected</p>
+
+<p>Dear Employee,</p>
+
+<p>You receive an email warning that <strong>unusual login activity</strong> was detected on your company account. The message urges you to <strong>click a link immediately</strong> to “secure your account.”</p>
+
+<p>The email uses official logos and a professional tone, but the <strong>sender address looks slightly different</strong> from the real IT domain.</p>
+
+<p>Thank you,<br>
+<strong>IT Security Team</strong></p>
+        `,
+        options: [
+            "Click the link and enter your credentials",
+            "Ignore the email completely",
+            "Report the email to IT/security"
+        ],
+        feedbackContent: `
+Social engineering attacks manipulate human behaviour rather than technical systems. Attackers often rely on urgency, curiosity, fear, or authority to pressure employees into making quick decisions without verifying the request.
+
+In workplace environments, these attacks commonly appear through suspicious emails, unexpected phone calls, fake system warnings, or physical devices such as unknown USB drives. Employees should always pause and verify requests before taking action.
+
+Best practice is to confirm requests through official communication channels, avoid interacting with unknown devices or links, and report suspicious activity to the appropriate internal authority or IT personnel.
+        `
     }
 ];
 
@@ -77,35 +146,35 @@ window.goHome = function () {
 
 window.loadInbox = function () {
     const inbox = document.getElementById("phishing-inbox");
-    inbox.innerHTML = ""; // clear
+    inbox.innerHTML = ""; // clear inbox content
+
+    // Only inbox title & instructions appear here
+    let html = `<h2>Phishing Inbox</h2><p>Select an email below to investigate the scenario.</p>`;
+
+
 
     phishingScenarios.forEach((scenario, index) => {
-        const email = document.createElement("div");
-        email.classList.add("email-item");
-        email.style.padding = "12px";
-        email.style.border = "1px solid #ccc";
-        email.style.borderRadius = "6px";
-        email.style.marginBottom = "10px";
-        email.style.cursor = "pointer";
-        email.style.background = "#fff3f3";
-        email.style.transition = "background 0.2s";
-
-        email.innerHTML = `
-            <strong>${scenario.title}</strong>
-            <p style="margin:5px 0 0 0; color:#555;">${scenario.preview}</p>
+        html += `
+            <div class="email-item" style="
+                padding:12px; 
+                border:1px solid #ccc; 
+                border-radius:6px; 
+                margin-bottom:10px; 
+                cursor:pointer; 
+                background:#fff3f3; 
+                transition: background 0.2s;">
+                <strong>${scenario.title}</strong>
+                <p style="margin:5px 0 0 0; color:#555;">${scenario.preview}</p>
+            </div>
         `;
 
-        email.addEventListener("mouseenter", () => {
-            email.style.background = "#f0e6ff";
-        });
-        email.addEventListener("mouseleave", () => {
-            email.style.background = "#fff3f3";
-        });
-
-        email.addEventListener("click", () => loadScenario(index));
-
-        inbox.appendChild(email);
+        // Attach click after adding element
+        setTimeout(() => {
+            document.querySelectorAll(".email-item")[index].addEventListener("click", () => loadScenario(index));
+        }, 0);
     });
+
+    inbox.innerHTML = html;
 };
 
 // =======================
@@ -114,30 +183,46 @@ window.loadInbox = function () {
 window.loadScenario = function (index) {
     const inbox = document.getElementById("phishing-inbox");
     const scenario = phishingScenarios[index];
-    inbox.innerHTML = ""; // clear
+    inbox.innerHTML = ""; // clear inbox
 
+    // Scenario content styled like your simulations (pastel yellow)
     let html = `
-        <h3>${scenario.title}</h3>
-        <div style="margin:10px 0; padding:15px; border:1px solid #ccc; border-radius:8px; background:#fafafa;">
-            <p>${scenario.content}</p>
-        </div>
-    `;
+<div class="scenario-progress">
+Scenario ${index + 1} of ${phishingScenarios.length}
+</div>
 
+<div class="scenario-card">
+
+<div class="scenario-title">
+${scenario.title}
+</div>
+
+<div class="attack-type">
+Attack Type: <strong>PHISHING</strong>
+</div>
+
+<div class="email-box">
+${scenario.content}
+</div>
+`;
+
+    // Options as radio buttons styled as cards
     scenario.options.forEach((option, i) => {
         html += `
-            <label class="option-label" style="
-                display:block; margin:6px 0; padding:8px 10px; border:1px solid #ddd; border-radius:6px; cursor:pointer; transition: background 0.2s;">
-                <input type="radio" name="scenario-option" value="${i}" style="margin-right:8px;"> ${String.fromCharCode(65 + i)}) ${option}
-            </label>
-        `;
+    <label class="option-card">
+        <input type="radio" name="scenario-option" value="${i}">
+        ${String.fromCharCode(65 + i)}) ${option}
+    </label>
+    `;
     });
 
     html += `
-        <button id="submit-btn" disabled style="margin-top:15px; padding:10px 18px; cursor:pointer; background:#4B0082; color:#fff; border:none; border-radius:6px;">Submit</button>
-        <button style="margin-top:15px; margin-left:8px; padding:10px 18px; border:none; border-radius:6px; cursor:pointer; background:#ccc;" onclick="loadInbox()">Back to Inbox</button>
-        <button style="margin-top:15px; margin-left:8px; padding:10px 18px; border:none; border-radius:6px; cursor:pointer; background:#007ACC; color:#fff;" onclick="goHome()">Back to Homepage</button>
-    `;
+</div>
 
+<button id="submit-btn" class="submit-btn" disabled>
+Submit Answer
+</button>
+`;
     inbox.innerHTML = html;
 
     const submitBtn = document.getElementById("submit-btn");
@@ -146,6 +231,10 @@ window.loadScenario = function (index) {
     radios.forEach(radio => {
         radio.addEventListener("change", () => {
             submitBtn.disabled = false;
+            // highlight selected
+            radios.forEach(r => r.parentElement.style.background = "#fffbe0");
+            radio.parentElement.style.background = "#FFF59D";
+            radio.parentElement.style.transform = "scale(1.02)";
         });
     });
 
@@ -160,23 +249,73 @@ window.showFeedback = function (index) {
     const scenario = phishingScenarios[index];
     const selected = parseInt(document.querySelector('input[name="scenario-option"]:checked').value);
 
+    let optionFeedback = "";
+    switch (index) {
+        case 0:
+            if (selected === 0) optionFeedback = "✅ Good. Deleting suspicious emails is safe.";
+            else if (selected === 1) optionFeedback = "❌ Entering credentials would compromise your account.";
+            else optionFeedback = "⚠️ Reporting is correct. Helps IT investigate.";
+            break;
+        case 1:
+            if (selected === 0) optionFeedback = "❌ Opening attachments may spread malware.";
+            else if (selected === 1) optionFeedback = "✅ Correct. Always verify through official channels.";
+            else optionFeedback = "⚠️ Forwarding may spread the attack.";
+            break;
+        case 2:
+            if (selected === 0) optionFeedback = "❌ Attackers often impersonate IT to steal credentials.";
+            else if (selected === 1) optionFeedback = "⚠️ Ignoring avoids risk, but reporting is better.";
+            else optionFeedback = "✅ Correct. Reporting helps IT investigate.";
+            break;
+        case 3:
+            if (selected === 0) optionFeedback = "❌ This is a common phishing tactic.";
+            else if (selected === 1) optionFeedback = "⚠️ Ignoring avoids the trap but reporting is better.";
+            else optionFeedback = "✅ Correct. Reporting protects you and others.";
+            break;
+    }
+
+    // Feedback page //
     inbox.innerHTML = `
-        <h3>${scenario.title} – Feedback</h3>
-        <div style="padding:15px; border:1px solid #ccc; border-radius:8px; background:#fafafa; margin-bottom:15px;">
-            <p style="font-weight:600; font-size:16px;">${scenario.feedback[selected]}</p>
-        </div>
-        <div style="line-height:1.6; margin-bottom:15px;">
-            <p>Social engineering attacks manipulate human behaviour to trick employees. Always pause and verify requests before taking action.</p>
-            <p>Unexpected emails, links, or attachments may be phishing attempts. Never provide credentials or personal details without confirming legitimacy.</p>
-            <p>Report suspicious messages to your IT/security team to prevent harm to yourself and others.</p>
-        </div>
+<h2>${scenario.title}</h2>
 
-        <button style="margin-top:10px; padding:10px 18px; cursor:pointer; background:#4B0082; color:#fff; border:none; border-radius:6px;" onclick="loadScenario(${index})">Back to Scenario</button>
-        <button style="margin-top:10px; margin-left:8px; padding:10px 18px; border:none; border-radius:6px; cursor:pointer; background:#ccc;" onclick="loadInbox()">Back to Inbox</button>
-        <button style="margin-top:10px; margin-left:8px; padding:10px 18px; border:none; border-radius:6px; cursor:pointer; background:#007ACC; color:#fff;" onclick="goHome()">Back to Homepage</button>
-    `;
+<div class="feedback-card">
+
+<p><strong>${optionFeedback}</strong></p>
+
+<p>
+Social engineering attacks manipulate human behaviour rather than technical systems.
+Attackers often rely on urgency, curiosity, fear, or authority to pressure employees
+into making quick decisions without verifying the request.
+</p>
+
+<p>
+In workplace environments these attacks appear through suspicious emails,
+unexpected phone calls, fake warnings, or unknown devices.
+</p>
+
+<p>
+Best practice is to confirm requests through official channels and report
+suspicious activity to IT/security.
+</p>
+
+</div>
+
+<div class="feedback-buttons">
+
+<button class="sim-btn" onclick="loadScenario(${index})">
+Back to Scenario
+</button>
+
+<button class="sim-btn" onclick="loadInbox()">
+Back to Inbox
+</button>
+
+<button class="sim-btn" onclick="goHome()">
+Back to Homepage
+</button>
+
+</div>
+`;
 };
-
 // =======================
 // INIT
 // =======================

@@ -89,6 +89,39 @@ const scenarios = [
         ]
     },
 
+    {
+        type: "phishing",
+        title: "Email Phishing – Security Alert",
+        inboxSubject: "Important: Account Security Alert",
+        content: `
+<p>You receive an email warning that unusual login activity was detected on your company account.</p>
+
+<p>The message urges you to click a link immediately to “secure your account.”</p>
+
+<p>The email uses official logos and a professional tone, but the sender address looks slightly different from the real IT domain.</p>
+`,
+        options: [
+            "Click the link and log in to secure your account",
+            "Ignore the email",
+            "Report the email to IT/security"
+        ],
+        correct: 2,
+        feedback: [
+            `❌ Clicking the link immediately would send your login credentials to attackers. 
+Phishing emails are designed to look urgent and authentic to pressure users into mistakes. 
+Always check sender addresses carefully and avoid interacting with suspicious links.`,
+
+            `⚠️ Ignoring the email avoids immediate risk, but it does not alert IT. 
+This could allow the attacker to target others with the same email without detection. 
+Reporting is the safest way to handle potential phishing.`,
+
+            `✅ Correct! Reporting suspicious emails helps IT investigate and prevent attacks. 
+Security teams can block malicious domains, educate staff, and secure any accounts that may have been targeted. 
+Always report before interacting with unexpected requests.`
+        ]
+    },
+
+
     /* =======================
     BAITING SCENARIOS
     ======================= */
@@ -163,6 +196,36 @@ const scenarios = [
         ]
     },
 
+    {
+        type: "baiting",
+        title: "Baiting – Free USB Drive at Office Entrance",
+        content: `
+<p>While walking past the office entrance, you find a USB flash drive with a label “Confidential Client Data.”</p>
+
+<p>It looks professionally packaged, but you do not know who left it there. There is no context for the files.</p>
+
+<p>Attackers sometimes leave infected devices hoping employees will plug them in out of curiosity.</p>
+`,
+        options: [
+            "Plug it into your computer to see the contents",
+            "Hand it over to IT/security for inspection",
+            "Leave it where it is"
+        ],
+        correct: 1,
+        feedback: [
+            `❌ Plugging in unknown USB drives can immediately infect your computer with malware. 
+These attacks exploit curiosity and bypass technical security by targeting human behaviour. 
+Even seemingly “innocent” files can contain viruses or ransomware.`,
+
+            `✅ Correct! IT/security can safely analyze unknown devices in a controlled environment. 
+Reporting suspicious USB drives prevents potential malware infection and protects the organization from data breaches. 
+Never connect unverified devices to your system.`,
+
+            `⚠️ Leaving it avoids immediate harm, but the threat remains unreported. 
+Other employees might pick it up, leading to potential compromise. 
+Always involve IT/security for safe handling of unknown devices.`
+        ]
+    },
     /* =======================
     PRETEXTING SCENARIOS
     ======================= */
@@ -233,6 +296,36 @@ const scenarios = [
             "❌ Sharing credentials exposes systems to attackers.",
             "✅ Correct! Verification prevents social engineering attacks.",
             "⚠️ Ignoring avoids immediate harm but does not report the threat."
+        ]
+    },
+
+    {
+        type: "pretexting",
+        title: "Pretexting – Executive Request via Email",
+        content: `
+<p>You receive an email claiming to be from your company CEO.</p>
+
+<p>The email asks you to urgently purchase gift cards for a client and send the codes back immediately. 
+It emphasizes confidentiality and creates pressure to act quickly.</p>
+
+<p>The sender appears convincing, but the request is unusual and out of context.</p>
+`,
+        options: [
+            "Purchase the gift cards and send the codes",
+            "Verify the request with the CEO or your manager before taking action",
+            "Ignore the email"
+        ],
+        correct: 1,
+        feedback: [
+            `❌ Acting immediately on this request is dangerous. 
+Pretexting attacks manipulate authority and urgency to bypass standard procedures. 
+Sending gift cards or money without verification can result in financial loss.`,
+
+            `✅ Correct! Always verify unusual requests with the person directly through official channels. 
+Even convincing emails can be faked. Reporting the attempt also alerts IT/security and protects colleagues from the same scam.`,
+
+            `⚠️ Ignoring may prevent immediate loss, but it leaves the attack unreported. 
+Other employees could fall victim to the same request. Verification and reporting are the safest measures.`
         ]
     }
 
@@ -831,20 +924,22 @@ function gradePostQuiz() {
     postQuizResponses.forEach((response, index) => {
 
         const keywords = postQuizQuestions[index].keywords;
-        let score = 0;
+        let matchedCount = 0;
 
         const lower = response.toLowerCase();
 
         keywords.forEach(keyword => {
-            if (lower.includes(keyword)) {
-                score++;
+            // split multi-word keywords into words for better matching
+            const words = keyword.split(" ");
+            if (words.some(word => lower.includes(word))) {
+                matchedCount++;
             }
         });
 
-        const questionScore = score / keywords.length;
+        // proportional score based on matched keywords
+        const questionScore = matchedCount / keywords.length;
 
         postQuizScores.push(questionScore);
-
         totalScore += questionScore;
 
     });
@@ -854,6 +949,8 @@ function gradePostQuiz() {
     showPostQuizResults(percentage);
 
 }
+
+
 function showPostQuizResults(score) {
 
     sectionTitle.textContent = "Post-Quiz Results";
@@ -969,7 +1066,8 @@ function showPostQuizResults(score) {
             cursor:pointer;
         ">Go to Homepage</button>
 
-        <button id="goNotes()" style="
+        <button onclick="goInfo()"
+         style="
             padding:10px 20px;
             background:#007ACC;
             color:#fff;
@@ -1004,6 +1102,6 @@ function goHome() {
 }
 
 function goNotes() {
-    window.location.href = "notes.html";
+    window.location.href = "info.html";
 }
 
