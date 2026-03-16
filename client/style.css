@@ -512,11 +512,23 @@ body {
 }
 
 /* Locked button style */
+<<<<<<< HEAD:client/style.css
 .locked-link {
     color: white !important;
     cursor: not-allowed;
     position: relative;
     pointer-events: auto; /* allow clicking to show modal */
+=======
+.nav-band a[data-locked="true"] {
+    color: #aaa;
+    cursor: not-allowed;
+    position: relative;
+}
+
+.nav-band a[data-locked="true"]::after {
+    content: ' 🔒';
+    font-size: 0.9em;
+>>>>>>> main:style.css
 }
 
 /* Modal style */
@@ -595,6 +607,7 @@ body {
 
 .sim-btn:hover {
     background-color: #4c98a8;
+<<<<<<< HEAD:client/style.css
 }
 
 /* Mobile Responsive Styles */
@@ -713,4 +726,6 @@ body {
         margin: 20px auto;
         padding: 0 10px;
     }
+=======
+>>>>>>> main:style.css
 }
