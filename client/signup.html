@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - S.E.A.S</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <main class="signup-page">
+        <h2>Create Your Account</h2>
+
+        <!-- Full Name -->
+        <div class="signup-container">
+            <span class="material-icons">person</span>
+            <input type="text" id="fullName" placeholder="Full Name">
+        </div>
+
+        <!-- Username -->
+        <div class="signup-container">
+            <span class="material-icons">account_circle</span>
+            <input type="text" id="signupUsername" placeholder="Username">
+        </div>
+
+        <!-- Email -->
+        <div class="signup-container">
+            <span class="material-icons">email</span>
+            <input type="email" id="email" placeholder="Email">
+        </div>
+
+        <!-- Set Password -->
+        <div class="signup-container">
+            <span class="material-icons">lock</span>
+            <input type="password" placeholder="Set Password (8+ characters)" id="setPassword">
+        </div>
+        <p id="caps-warning-set" style="color:red; font-size:0.9em; display:none; text-align:center;"> ⚠️Caps Lock is ON</p>
+
+        <!-- Confirm Password -->
+        <div class="signup-container">
+            <span class="material-icons">lock</span>
+            <input type="password" placeholder="Confirm Password" id="confirmPassword">
+        </div>
+        <p id="caps-warning-confirm" style="color:red; font-size:0.9em; display:none; text-align:center;"> ⚠️Caps Lock is ON</p>
+
+        <button class="signup-btn" onclick="handleSignup()">Sign Up</button>
+
+        <p>Already have an account? <a href="login.html">Login</a></p>
+    </main>
+
+    <script>
+        async function handleSignup() {
+            const fullName = document.getElementById('fullName').value;
+            const username = document.getElementById('signupUsername').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('setPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (!fullName || !username || !email || !password) {
+                alert("Please fill in all fields");
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:5000/api/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ fullName, username, email, password }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert("Account created successfully! Please login.");
+                    location.href = 'login.html';
+                } else {
+                    alert(data.message || "Signup failed");
+                }
+            } catch (error) {
+                console.error("Signup error:", error);
+                alert("Could not connect to the server.");
+            }
+        }
+
+        function detectCaps(inputId, warningId) {
+            const input = document.getElementById(inputId);
+            const warning = document.getElementById(warningId);
+
+            if (input && warning) {
+                input.addEventListener('keyup', (event) => {
+                    if (event.getModifierState('CapsLock')) {
+                        warning.style.display = 'block';
+                    } else {
+                        warning.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+        detectCaps('setPassword', 'caps-warning-set');
+        detectCaps('confirmPassword', 'caps-warning-confirm');
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>
