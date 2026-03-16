@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baiting Scenarios - S.E.A.S</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="S.E.A.S Logo" class="logo">
+            <h1>S.E.A.S</h1>
+        </div>
+    </header>
+
+    <!-- NAV BAND -->
+    <nav class="nav-band">
+        Baiting Scenarios
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="simulation-container">
+
+        <!-- Inbox Container -->
+        <div id="baiting-inbox"></div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="js/baiting.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Load inbox on page load
+            window.loadBaitingInbox();
+        });
+    </script>
+
+</body>
+
+</html>

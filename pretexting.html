@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pretexting Scenarios - S.E.A.S</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="S.E.A.S Logo" class="logo">
+            <h1>S.E.A.S</h1>
+        </div>
+    </header>
+
+    <nav class="nav-band">
+        Pretexting Scenarios
+    </nav>
+
+    <div class="simulation-container">
+
+        <div id="pretexting-inbox"></div>
+
+    </div>
+
+    <script src="js/pretexting.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            window.loadInbox();
+        });
+    </script>
+
+</body>
+
+</html>
